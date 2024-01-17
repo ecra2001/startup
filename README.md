@@ -9,5 +9,8 @@ You start of basic with a point per click on the cookies. As you rack up more po
 
 ## Representing All Technologies
 ### Authentication
+Before playing the game, the user will be asked to create a new account or log in to a previous account.
 ### Database Data 
+Data is stored into the highscore data base and is published for others to see.
 ### WebSocket Data
+A rendering of data is received to the server when a new game is being playing or the highscore updates in real time.
