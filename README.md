@@ -8,6 +8,6 @@ A fun idea I had for my application is to make a fun cookie clicker game. There'
 You start of basic with a point per click on the cookies. As you rack up more points, you can upgrade your cookie with the points you have to earn more points per click or you can use your points to buy items that with automatically add to your point counter every second. You can see if you've made it to the leaderboard by checking the highscores.
 
 ## Representing All Technologies
-**Authentication** - 
-**Database Data** - 
-**WebSocket Data** - 
+### Authentication
+### Database Data 
+### WebSocket Data
