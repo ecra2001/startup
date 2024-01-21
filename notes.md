@@ -1,4 +1,6 @@
-git clone - extracts copy
+git clone - extracts copy 
+
+
 git push - pushes to github
 git pull - pulls from github
 git add - adding file to git
