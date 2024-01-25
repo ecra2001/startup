@@ -15,4 +15,5 @@ git commit - commits changes
 
 git status - gets the status of repository
 
-### IP Address: http://ec2-54-242-170-235.compute-1.amazonaws.com
+### IP Address: http://ec2-34-232-206-8.compute-1.amazonaws.com
+
