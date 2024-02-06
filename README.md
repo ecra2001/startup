@@ -14,3 +14,11 @@ Before playing the game, the user will be asked to create a new account or log i
 Data is stored into the highscore data base and is published for others to see.
 ### WebSocket Data
 A rendering of data is received to the server when a new game is being playing or the highscore updates in real time.
+
+## HTML Deliverable
+- Created HTML pages for login, cookie clicker game, cookie clicker shop, and scoreboard
+- Added links to navigate on any page and a link to github repository at the bottom of each page
+- There is textual descriptions for the scoreboard and for each upgrade
+- Haven't decided what images I wanted yet, but I have a cookie image for the cookie clicker button
+-  Input box and submit button for login. More buttons for clicking cookie and upgrading in the shop
+- The highscores in the scoreboard will be displayed in real time
