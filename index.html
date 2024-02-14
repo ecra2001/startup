@@ -1,47 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- Tell browsers not to scale the viewport automatically -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cookie Clicker HTML</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Cookie Clicker</title>
     <link rel="icon" href="favicon.ico" />
-  </head>
-  <body>
-    <!-- Use header, main, and footer elements to give semantic structure -->
+    <link rel="stylesheet" href="main.css" />
+</head>
+<body>
     <header>
-      <h1>Cookie Clicker<sup>&reg;</sup></h1>
-
-      <!-- Navigation elements -->
-      <nav>
-        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
-        <menu>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="play.html">Play</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="score.html">Scores</a></li>
-        </menu>
-      </nav>
-
-      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
-      <hr />
+        <h1>Cookie Clicker</h1>
+        <nav>
+            <menu>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="play.html">Play</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="score.html">Scores</a></li>
+            </menu>
+        </nav>
+        <hr class="header-divider">
     </header>
 
     <main>
-      <h1>Welcome</h1>
-      <p>Login to play</p>
-      <form method="get" action="play.html">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Your name here" />
-        <button type="submit">Login</button>
-      </form>
+        <div class="login-container">
+            <h1>Welcome</h1>
+            <p>Login to play</p>
+            <form method="get" action="play.html" class="login-form">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your name here" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
     </main>
 
     <footer>
-      <hr />
-      <span class="text-reset">Elijah Cramer</span>
-      <br />
-      <a href="https://github.com/ecra2001/startup/tree/main">GitHub</a>
+        <hr class="footer-divider">
+        <span class="text-reset">Elijah Cramer</span>
+        <br>
+        <a href="https://github.com/ecra2001/startup/tree/main">GitHub</a>
     </footer>
-  </body>
+</body>
 </html>
