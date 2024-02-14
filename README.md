@@ -22,3 +22,11 @@ A rendering of data is received to the server when a new game is being playing o
 - Haven't decided what images I wanted yet, but I have a cookie image for the cookie clicker button
 -  Input box and submit button for login. More buttons for clicking cookie and upgrading in the shop
 - The highscores in the scoreboard will be displayed in real time
+
+## CSS Deliverable
+- Header, footer, and main content body added
+- Navigation links are located within the header of the page
+- Window sizing looks good from large to small screens
+- Page has consistent coloring and good white space
+- Fonts and text colors are consistent
+- As far as images, I still have a cookie button to represent the giant cookie, but I will replace it with an image soon
