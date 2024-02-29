@@ -29,33 +29,37 @@
       <hr />
     </header>
 
-    <main>
-      <div class="players">
-        Player:
-        <span class="player-name" id="playerName"></span>
+    <main class="flex-container">
+      <div class="flex-item">
+        <div class="players" id="player-messages">
+          Player:
+          <span class="player-name" id="playerName"></span>
+        </div>
+        <ul class="notification">
+          <div class="event"><span class="player-event">Håkon</span> scored 377</div>
+          <div class="event"><span class="player-event">Tim</span> started a new game</div>
+          <div class="event"><span class="system-event">game</span> connected</div>
+        </ul>
       </div>
-      <ul class="notification">
-        <li class="player-name">Tim started a new game</li>
-        <li class="player-name">Ada started a new game</li>
-        <li class="player-name">Game Connected</li>
-      </ul>
       <!-- Notification list and score display -->
-      <br />
-      <div class="score-reset-container">
-        <div>
-          <label for="count">Score</label>
-          <input type="text" id="count" value="0" readonly />
+      <div class="flex-item">
+        <div class="score-reset-container">
+          <div>
+            <label for="count">Score</label>
+            <input type="text" id="count" value="0" readonly />
+          </div>
+          <div>
+            <button onclick="resetScore()">Reset</button>
+          </div>
         </div>
         <div>
-          <button onclick="resetScore()">Reset</button>
+          <button class="cookie-button" onclick="incrementScore()">
+            <img src="Cookie.png" alt="Cookie Image" width="300" height="300">
+          </button>
         </div>
-      </div>
-      <div>
-        <button class="cookie-button" onclick="incrementScore()">
-          <img src="Cookie.png" alt="Cookie Image" width="300" height="300">
-        </button>
       </div>
     </main>
+    
 
     <footer>
       <hr />
