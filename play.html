@@ -30,26 +30,24 @@
     </header>
 
     <main>
-    
       <div class="players">
         Player:
-        <span class="player-name">Mystery player</span>
+        <span class="player-name" id="playerName"></span>
       </div>
       <ul class="notification">
         <li class="player-name">Tim started a new game</li>
         <li class="player-name">Ada started a new game</li>
-        <li class="player-name">Tim scored 337</li>
+        <li class="player-name">Game Connected</li>
       </ul>
-    
-      <!-- More formatting with old style HTML -->
+      <!-- Notification list and score display -->
       <br />
       <div class="score-reset-container">
         <div>
           <label for="count">Score</label>
-          <input type="text" id="count" value="--" readonly />
+          <input type="text" id="count" value="0" readonly />
         </div>
         <div>
-          <button>Reset</button>
+          <button onclick="resetScore()">Reset</button>
         </div>
       </div>
       <div>
@@ -65,5 +63,7 @@
       <br />
       <a href="https://github.com/ecra2001/startup/tree/main">GitHub</a>
     </footer>
+
+    <script src="play.js"></script>
   </body>
 </html>
