@@ -11,6 +11,8 @@ body {
     background-color: #f8f8f8;
     color: #333;
     line-height: 1.6;
+    min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+    position: relative; /* Set position to relative for absolute positioning */
 }
 
 .container {
@@ -59,21 +61,25 @@ hr {
 main {
     text-align: center;
     padding: 50px 0;
+    margin-bottom: 20px; /* Ensure content doesn't overflow into the footer */
 }
 
-.players {
+.players-container {
+    display: flex; /* Use flexbox to stack items */
+    justify-content: center; /* Horizontally center items */
+    margin-bottom: 20px; /* Add some spacing */
+}
+
+.players,
+.notification {
     font-size: 18px;
-    margin-bottom: 10px;
+    text-align: left; /* Center text */
+    width: 200px; /* Set a fixed width for alignment */
+    margin-left: 40px; /* Add some spacing between items */
 }
 
 .notification {
-    list-style-type: none;
-    padding: 0;
-}
-
-.notification li {
-    color: #555;
-    margin-bottom: 5px;
+    margin-right: 0; /* Remove margin from the last item */
 }
 
 #count {
@@ -81,6 +87,14 @@ main {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
+}
+
+.cookie-button {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    overflow: hidden; 
+    box-sizing: border-box;
 }
 
 button {
@@ -92,11 +106,6 @@ button {
     cursor: pointer;
 }
 
-.cookie-button {
-    font-size: 20px;
-    margin-top: 20px;
-}
-
 button:hover {
     background-color: #27ae60;
 }
@@ -106,7 +115,6 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px 0;
-    position: absolute;
     bottom: 0;
     width: 100%;
 }
@@ -120,4 +128,12 @@ hr {
 
 .text-reset {
     color: #fff;
+}
+
+.score-reset-container {
+  text-align: center; /* Center the content horizontally */
+}
+
+.score-reset-container > div {
+  margin-bottom: 10px; /* Add some spacing between the elements */
 }
