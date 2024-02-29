@@ -15,6 +15,18 @@ body {
     position: relative; /* Set position to relative for absolute positioning */
 }
 
+.event {
+    color: rgb(69, 69, 69);
+  }
+  
+  .player-event {
+    color: rgb(22, 211, 35);
+  }
+  
+  .system-event {
+    color: rgb(221, 148, 40);
+  }
+
 .container {
     width: 80%;
     margin: 0 auto;
@@ -58,6 +70,16 @@ hr {
     margin: 20px 0;
 }
 
+.flex-container {
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+  }
+  
+  .flex-item {
+    flex-basis: 50%; /* Adjust as needed */
+    padding: 10px; /* Adjust as needed */
+  }  
+
 main {
     text-align: center;
     padding: 50px 0;
@@ -72,10 +94,11 @@ main {
 
 .players,
 .notification {
+    flex: 1;
     font-size: 18px;
-    text-align: left; /* Center text */
-    width: 200px; /* Set a fixed width for alignment */
-    margin-left: 40px; /* Add some spacing between items */
+    text-align: left;
+    width: 100%;
+    margin-left: 40px;
 }
 
 .notification {
