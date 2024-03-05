@@ -1,30 +1,37 @@
-// Retrieve the username from localStorage
-const storedName = localStorage.getItem('userName');
+// // Retrieve the username from localStorage
+// const storedName = localStorage.getItem('userName');
 
-// Display the username on the page
-if (storedName) {
-  document.getElementById('playerName').textContent = storedName;
+// // Display the username on the page
+// if (storedName) {
+//   document.getElementById('playerName').textContent = storedName;
+// }
+
+const playerNameEl = document.querySelector('.player-name');
+playerNameEl.textContent = this.getPlayerName();
+
+function getPlayerName() {
+  return localStorage.getItem('userName') ?? 'Mystery player';
 }
 
 // Function to increment the score
-function incrementScore() {
-    // Retrieve the current score from localStorage or default to 0 if not found
-    let score = parseInt(localStorage.getItem('score')) || 0;
-  
-    // Initialize clickValue to 1 if it's not already set
-    if (isNaN(incrementScore.clickValue)) {
-      incrementScore.clickValue = 1;
-    }
+  function incrementScore() {
+      // Retrieve the current score from localStorage or default to 0 if not found
+      let score = parseInt(localStorage.getItem('score')) || 0;
+    
+      // Initialize clickValue to 1 if it's not already set
+      if (isNaN(incrementScore.clickValue)) {
+        incrementScore.clickValue = 1;
+      }
 
-    // Increment the score by 
-    score += incrementScore.clickValue;
-  
-    // Update the score in localStorage
-    localStorage.setItem('score', score);
-  
-    // Update the score display
-    document.getElementById('count').value = score;
-  }
+      // Increment the score by 
+      score += incrementScore.clickValue;
+    
+      // Update the score in localStorage
+      localStorage.setItem('score', score);
+    
+      // Update the score display
+      document.getElementById('count').value = score;
+    }
   
   // Function to reset the score
   function resetScore() {
