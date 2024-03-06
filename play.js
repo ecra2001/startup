@@ -1,14 +1,10 @@
-// // Retrieve the username from localStorage
-// const storedName = localStorage.getItem('userName');
-
-// // Display the username on the page
-// if (storedName) {
-//   document.getElementById('playerName').textContent = storedName;
-// }
-
+document.addEventListener('DOMContentLoaded', function() {
+// Display the username on the page
 const playerNameEl = document.querySelector('.player-name');
-playerNameEl.textContent = this.getPlayerName();
+playerNameEl.textContent = getPlayerName();
+});
 
+// Retrieve the username from localStorage
 function getPlayerName() {
   return localStorage.getItem('userName') ?? 'Mystery player';
 }
