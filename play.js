@@ -1,3 +1,5 @@
+let lastPrinted = 0;
+
 document.addEventListener('DOMContentLoaded', function() {
 // Display the username on the page
 const playerNameEl = document.querySelector('.player-name');
@@ -12,21 +14,25 @@ function getPlayerName() {
 // Function to increment the score
   function incrementScore() {
       // Retrieve the current score from localStorage or default to 0 if not found
-      let score = parseInt(localStorage.getItem('score')) || 0;
+    let score = parseInt(localStorage.getItem('score')) || 0;
     
-      // Initialize clickValue to 1 if it's not already set
-      if (isNaN(incrementScore.clickValue)) {
-        incrementScore.clickValue = 1;
-      }
+    // Retrieve clickValue from localStorage or default to 1 if not found
+    let clickValue = parseInt(localStorage.getItem('clickValue')) || 1;
 
       // Increment the score by 
-      score += incrementScore.clickValue;
+      score += clickValue;
     
       // Update the score in localStorage
       localStorage.setItem('score', score);
     
       // Update the score display
       document.getElementById('count').value = score;
+
+      this.updateScore(score);
+      if(score > lastPrinted + 100){
+        lastPrinted = Math.floor(score / 100) * 100;
+        this.saveScore(score);
+      }
     }
   
   // Function to reset the score
@@ -45,6 +51,47 @@ function getPlayerName() {
   
   // Retrieve the score from localStorage and display it
   document.getElementById('count').value = localStorage.getItem('score');
+
+  function updateScore(score) {
+    const scoreEl = document.querySelector('#score');
+    scoreEl.textContent = score;
+  }
+
+  function saveScore(score) {
+    const userName = this.getPlayerName();
+    let scores = [];
+    const scoresText = localStorage.getItem('scores');
+    if (scoresText) {
+      scores = JSON.parse(scoresText);
+    }
+    scores = this.updateScores(userName, score, scores);
+
+    localStorage.setItem('scores', JSON.stringify(scores));
+  }
+
+  function updateScores(userName, score, scores) {
+    const date = new Date().toLocaleDateString();
+    const newScore = { name: userName, score: score, date: date };
+
+    let found = false;
+    for (const [i, prevScore] of scores.entries()) {
+      if (score > prevScore.score) {
+        scores.splice(i, 0, newScore);
+        found = true;
+        break;
+      }
+    }
+
+    if (!found) {
+      scores.push(newScore);
+    }
+
+    if (scores.length > 10) {
+      scores.length = 10;
+    }
+
+    return scores;
+  }
   
   // Simulate chat messages that will come over WebSocket
 setInterval(() => {
