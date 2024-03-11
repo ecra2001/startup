@@ -36,3 +36,10 @@ A rendering of data is received to the server when a new game is being playing o
 - Tried to set up database for scoreboard, but this will be fixed with the database data later.
 - I used the setInterval function to periodically increase score announcements. This will be replaced with WebSocket messages later.
 - Score increases when the user clicks cookie, however, I'm having trouble figuring out an error where the upgrades in the shop don't increase the counter.
+
+## Service Deliverable
+- Node.js/Express HTTP service - done!
+- Static middleware for frontend - done!
+- Calls to thrid party endpoints - 
+- Backend service endpoints - 
+- Frontend calss service endpoints - Used fetch function.
