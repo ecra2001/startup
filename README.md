@@ -40,6 +40,6 @@ A rendering of data is received to the server when a new game is being playing o
 ## Service Deliverable
 - Node.js/Express HTTP service - done!
 - Static middleware for frontend - done!
-- Calls to thrid party endpoints - 
-- Backend service endpoints - 
+- Calls to thrid party endpoints - Displays random quotes under scoreboard.
+- Backend service endpoints - Placeholders for login that stores the current user on the server.
 - Frontend calss service endpoints - Used fetch function.
