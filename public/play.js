@@ -1,4 +1,4 @@
-let lastPrinted = 0;
+lastPrinted = 0;
 
 document.addEventListener('DOMContentLoaded', function() {
 // Display the username on the page
@@ -26,7 +26,7 @@ function getPlayerName() {
       localStorage.setItem('score', score);
     
       // Update the score display
-      document.getElementById('count').value = score;
+      document.getElementById('score').value = score;
 
       this.updateScore(score);
       if(score > lastPrinted + 100){
@@ -41,7 +41,7 @@ function getPlayerName() {
     localStorage.setItem('score', 0);
   
     // Update the score display
-    document.getElementById('count').value = 0;
+    document.getElementById('score').value = 0;
   }
   
   // Initialize the score if it hasn't been set before
@@ -50,7 +50,7 @@ function getPlayerName() {
   }
   
   // Retrieve the score from localStorage and display it
-  document.getElementById('count').value = localStorage.getItem('score');
+  // document.getElementById('score').value = localStorage.getItem('score');
 
   function updateScore(score) {
     const scoreEl = document.querySelector('#score');
