@@ -6,7 +6,6 @@
     <title>Login - Cookie Clicker</title>
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="main.css" />
-    <script src="login.js"></script>
 </head>
 <body>
     <header>
@@ -14,9 +13,6 @@
         <nav>
             <menu>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="play.html">Play</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="score.html">Scores</a></li>
             </menu>
         </nav>
         <hr class="header-divider">
@@ -24,14 +20,28 @@
 
     <main>
         <div class="login-container">
-            <h1>Welcome</h1>
-            <p>Login to play</p>
-            <form method="get" action="play.html" class="login-form">
-                <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Your name here" required>
-                <button type="submit" onclick="login()">Login</button>
-            </form>
+                <h1>Welcome to Cookie Clicker</h1>
+            <!-- Displayed when needing authentication -->
+            <div id="loginControls" style="display: none">
+            <div class="input-group mb-3">
+                <span class="input-group-text">@</span>
+                <input class="form-control" type="text" id="userName" placeholder="your@email.com" />
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">🔒</span>
+                <input class="form-control" type="password" id="userPassword" placeholder="password" />
+            </div>
+            <button type="button" class="btn btn-primary" onclick="loginUser()">Login</button>
+            <button type="button" class="btn btn-primary" onclick="createUser()">Create</button>
+            </div>
+            <!-- Displayed when ready to play -->
+            <div id="playControls" style="display: none">
+            <div id="playerName"></div>
+            <button type="button" class="btn btn-primary" onclick="play()">Play</button>
+            <button type="button" class="btn btn-secondary" onclick="logout()">Logout</button>
+            </div>
         </div>
+      
     </main>
 
     <footer>
@@ -40,5 +50,6 @@
         <br>
         <a href="https://github.com/ecra2001/startup/tree/main">GitHub</a>
     </footer>
+    <script src="login.js"></script>
 </body>
 </html>
