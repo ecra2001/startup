@@ -59,40 +59,40 @@ main {
     padding: 50px 0;
 }
 
+/* Additional CSS for styling the login page */
 .login-container {
-    background-color: #fff;
+    background-color: #f8f8f8;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
     margin: 0 auto;
 }
 
 .login-container h1 {
     font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.login-container p {
-    color: #888;
     margin-bottom: 20px;
+    color: #333;
 }
 
-.login-form label {
-    display: block;
-    margin-bottom: 5px;
-    text-align: left;
+.login-container .input-group {
+    margin-bottom: 15px;
 }
 
-.login-form input[type="text"] {
-    width: 90%;
+.login-container .input-group-text {
+    color: rgb(52, 52, 52);
+    border: none;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: calc(100% - 40px); /* Adjust for padding */
     padding: 10px;
-    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 3px;
 }
 
-.login-form button {
+.login-container button {
     width: 100%;
     padding: 10px;
     background-color: #2ecc71;
@@ -100,11 +100,14 @@ main {
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
 }
 
-.login-form button:hover {
+.login-container button:hover {
     background-color: #27ae60;
 }
+
 
 footer {
     background-color: #34495e;
