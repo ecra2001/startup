@@ -43,3 +43,11 @@ A rendering of data is received to the server when a new game is being playing o
 - Calls to thrid party endpoints - Displays random quotes under scoreboard.
 - Backend service endpoints - Placeholders for login that stores the current user on the server.
 - Frontend calss service endpoints - Used fetch function.
+
+## Service Login
+- MongoDB Atlas database created - done!
+- Stores data in MongoDB - done!
+- User registration - Successfully creates a new account in the database.
+- existing user - Stores the points under the same user if the user already exists.
+- Use MongoDB to store credentials - Stores both user and their points.
+- Restricts functionality - You cannot play cookie clicker until you've logged in.
