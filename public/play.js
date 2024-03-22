@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
 // Display the username on the page
 const playerNameEl = document.querySelector('.player-name');
 playerNameEl.textContent = getPlayerName();
+// Retrieve and display the score for the current user
+const score = getScoreForCurrentUser();
+updateScore(score);
 });
 
 // Retrieve the username from localStorage
@@ -11,10 +14,27 @@ function getPlayerName() {
   return localStorage.getItem('userName') ?? 'Mystery player';
 }
 
+// Retrieve the score for the current user from localStorage
+function getScoreForCurrentUser() {
+  const userName = getPlayerName();
+  const scoresText = localStorage.getItem('scores');
+  if (scoresText) {
+      const scores = JSON.parse(scoresText);
+      // Find the score associated with the current user
+      const userScore = scores.find(score => score.name === userName);
+      if (userScore) {
+          return userScore.score;
+      }
+  }
+  // If no score found for the user, return 0
+  return 0;
+}
+
 // Function to increment the score
   function incrementScore() {
       // Retrieve the current score from localStorage or default to 0 if not found
-    let score = parseInt(localStorage.getItem('score')) || 0;
+    //let score = parseInt(localStorage.getItem('score')) || 0;
+    let score = getScoreForCurrentUser();
     
     // Retrieve clickValue from localStorage or default to 1 if not found
     let clickValue = parseInt(localStorage.getItem('clickValue')) || 1;
@@ -23,7 +43,7 @@ function getPlayerName() {
       score += clickValue;
     
       // Update the score in localStorage
-      localStorage.setItem('score', score);
+      updateScoreForCurrentUser(score);
     
       // Update the score display
       document.getElementById('score').value = score;
@@ -34,14 +54,45 @@ function getPlayerName() {
         this.saveScore(score);
       }
     }
+
+  // Update the score for the current user in localStorage
+function updateScoreForCurrentUser(score) {
+  // Update the score in localStorage
+  // localStorage.setItem('score', score);*******
+
+  const userName = getPlayerName();
+  let scores = [];
+  const scoresText = localStorage.getItem('scores');
+  if (scoresText) {
+      scores = JSON.parse(scoresText);
+  }
+
+  // Update the score for the current user or add a new entry if not found
+  let found = false;
+  for (const userScore of scores) {
+      if (userScore.name === userName) {
+          userScore.score = score;
+          found = true;
+          break;
+      }
+  }
+  if (!found) {
+      scores.push({ name: userName, score: score });
+  }
+
+  // Update localStorage with updated scores
+  localStorage.setItem('scores', JSON.stringify(scores));
+}
   
   // Function to reset the score
   function resetScore() {
     // Set the score back to 0
-    localStorage.setItem('score', 0);
+    // localStorage.setItem('score', 0);
+    updateScoreForCurrentUser(0);
   
     // Update the score display
-    document.getElementById('score').value = 0;
+    // document.getElementById('score').value = 0;
+    updateScore(0);
   }
   
   // Initialize the score if it hasn't been set before
@@ -74,7 +125,8 @@ function getPlayerName() {
       localStorage.setItem('scores', JSON.stringify(scores));
     } catch {
       // If there was an error then just track scores locally
-      this.updateScoresLocal(newScore);
+      // this.updateScoresLocal(newScore);
+      updateScoreForCurrentUser(score);
     }
   }
 

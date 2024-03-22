@@ -22,7 +22,7 @@ function purchaseUpgrade(upgradeNumber) {
       alert(`Upgrade ${upgradeNumber} purchased successfully!`);
 
       // Update the score display
-      document.getElementById('count').value = currentScore;
+      document.getElementById('score').value = currentScore;
   } else {
       // Notify the user if they don't have enough points to purchase the upgrade
       alert('Insufficient points to purchase this upgrade.');
