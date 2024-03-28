@@ -44,10 +44,16 @@ A rendering of data is received to the server when a new game is being playing o
 - Backend service endpoints - Placeholders for login that stores the current user on the server.
 - Frontend calss service endpoints - Used fetch function.
 
-## Service Login
+## Login Deliverable
 - MongoDB Atlas database created - done!
 - Stores data in MongoDB - done!
 - User registration - Successfully creates a new account in the database.
 - existing user - Stores the points under the same user if the user already exists.
 - Use MongoDB to store credentials - Stores both user and their points.
 - Restricts functionality - You cannot play cookie clicker until you've logged in.
+
+## WebSocket Deliverable
+- Backend listens for WebSocket connection - done!
+- Frontend makes WebSocket connection - done! there seems to be an error in my game however that doesn't find the user's score. I didn't have time to fix that sadly.
+- Data sent over WebSocket connection - done!
+- WebSocket data displayed - All scores display in realtime.
