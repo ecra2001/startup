@@ -1,5 +1,7 @@
 lastPrinted = 0;
 
+configureWebSocket();
+
 document.addEventListener('DOMContentLoaded', function() {
 // Display the username on the page
 const playerNameEl = document.querySelector('.player-name');
@@ -176,8 +178,6 @@ function updateScoreForCurrentUser(score) {
       }
     };
   }
-
-  configureWebSocket();
 
   function displayMsg(cls, from, msg) {
     const chatText = document.querySelector('#notification');
