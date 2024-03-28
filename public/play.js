@@ -177,6 +177,8 @@ function updateScoreForCurrentUser(score) {
     };
   }
 
+  configureWebSocket();
+
   function displayMsg(cls, from, msg) {
     const chatText = document.querySelector('#notification');
     chatText.innerHTML =
