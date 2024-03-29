@@ -61,7 +61,9 @@ function getScoreForCurrentUser() {
       if(score > lastPrinted + 100){
         lastPrinted = Math.floor(score / 100) * 100;
         this.saveScore(score);
-        this.broadcastEvent(localStorage.getItem('userName'), GameScore, localStorage.getItem('scores'));
+        const scores = JSON.parse(scoresText);
+        const userScore = scores.score;
+        this.broadcastEvent(localStorage.getItem('userName'), GameScore, userScore);
       }
     }
 
