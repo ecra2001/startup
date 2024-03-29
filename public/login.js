@@ -31,6 +31,7 @@ async function loginOrCreate(endpoint) {
 
   if (response.ok) {
     localStorage.setItem('userName', userName);
+    loginMessage();
     window.location.href = 'play.html';
   } else {
     const body = await response.json();
@@ -39,6 +40,7 @@ async function loginOrCreate(endpoint) {
 }
 
 function play() {
+  loginMessage();
   window.location.href = 'play.html';
 }
 

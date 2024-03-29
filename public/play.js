@@ -1,5 +1,6 @@
 lastPrinted = 0;
 const GameStartEvent = 'gameStart';
+const GameScore = 'gameScore';
 
 configureWebSocket();
 
@@ -10,9 +11,12 @@ playerNameEl.textContent = getPlayerName();
 // Retrieve and display the score for the current user
 const score = getScoreForCurrentUser();
 updateScore(score);
-// Let other players know a new game has started
-this.broadcastEvent(this.getPlayerName(), GameStartEvent, {});
 });
+
+function loginMessage() {
+    // Let other players know a new game has started
+    this.broadcastEvent(localStorage.getItem('userName'), GameStartEvent, {});
+}
 
 // Retrieve the username from localStorage
 function getPlayerName() {
@@ -57,6 +61,7 @@ function getScoreForCurrentUser() {
       if(score > lastPrinted + 100){
         lastPrinted = Math.floor(score / 100) * 100;
         this.saveScore(score);
+        this.broadcastEvent(localStorage.getItem('userName'), GameScore, localStorage.getItem('scores'));
       }
     }
 
@@ -178,6 +183,8 @@ function updateScoreForCurrentUser(score) {
         const msg = JSON.parse(await event.data.text());
         if (msg.type === GameStartEvent) {
           this.displayMsg('player', msg.from, `started a new game`);
+        } else if (msg.type === GameScore) {
+          this.displayMsg('player', msg.from, `scored ${msg.value.score}`);
         }
       };
     }
