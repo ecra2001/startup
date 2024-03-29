@@ -1,4 +1,5 @@
 lastPrinted = 0;
+const GameStartEvent = 'gameStart';
 
 configureWebSocket();
 
@@ -9,6 +10,8 @@ playerNameEl.textContent = getPlayerName();
 // Retrieve and display the score for the current user
 const score = getScoreForCurrentUser();
 updateScore(score);
+// Let other players know a new game has started
+this.broadcastEvent(this.getPlayerName(), GameStartEvent, {});
 });
 
 // Retrieve the username from localStorage
@@ -173,9 +176,7 @@ function updateScoreForCurrentUser(score) {
       };
       this.socket.onmessage = async (event) => {
         const msg = JSON.parse(await event.data.text());
-        if (msg.type === GameEndEvent) {
-          this.displayMsg('player', msg.from, `scored ${msg.value.score}`);
-        } else if (msg.type === GameStartEvent) {
+        if (msg.type === GameStartEvent) {
           this.displayMsg('player', msg.from, `started a new game`);
         }
       };
