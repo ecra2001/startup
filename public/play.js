@@ -187,7 +187,7 @@ function updateScoreForCurrentUser(score) {
         if (msg.type === GameStartEvent) {
           this.displayMsg('player', msg.from, `started a new game`);
         } else if (msg.type === GameScore) {
-          this.displayMsg('player', msg.from, `scored ${msg.value.score}`);
+          this.displayMsg('player', msg.from, `scored ${msg.value}`);
         }
       };
     }
