@@ -16,7 +16,7 @@
         "react": "^18.2.0",
         "react-bootstrap": "^2.10.2",
         "react-dom": "^18.2.0",
-        "react-router-dom": "^6.4.3"
+        "react-router-dom": "^6.22.3"
     },
     "description": "This deliverable demonstrates introduces the [React](https://react.dev) web framework and [Vite](https://vitejs.dev/) for frontend tooling.",
     "main": "vite.config.js",
