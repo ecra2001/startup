@@ -1,0 +1,166 @@
+/* Reset default browser styles */
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, fieldset, input, button, hr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+    position: relative; /* Set position to relative for absolute positioning */
+}
+
+.event {
+    color: rgb(69, 69, 69);
+  }
+  
+  .player-event {
+    color: rgb(22, 211, 35);
+  }
+  
+  .system-event {
+    color: rgb(221, 148, 40);
+  }
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav menu li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav menu li a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #fff;
+    margin: 20px 0;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+  }
+  
+  .flex-item {
+    flex-basis: 50%; /* Adjust as needed */
+    padding: 10px; /* Adjust as needed */
+  }  
+
+main {
+    text-align: center;
+    padding: 50px 0;
+    margin-bottom: 20px; /* Ensure content doesn't overflow into the footer */
+}
+
+.players-container {
+    display: flex; /* Use flexbox to stack items */
+    justify-content: center; /* Horizontally center items */
+    margin-bottom: 20px; /* Add some spacing */
+}
+
+.players,
+.notification {
+    flex: 1;
+    font-size: 18px;
+    text-align: left;
+    width: 100%;
+    margin-left: 40px;
+}
+
+.notification {
+    margin-right: 0; /* Remove margin from the last item */
+}
+
+.count {
+    width: 50px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.cookie-button {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    overflow: hidden; 
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #27ae60;
+}
+
+footer {
+    background-color: #34495e;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    bottom: 0;
+    width: 100%;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #fff;
+    margin: 10px 0;
+}
+
+.text-reset {
+    color: #fff;
+}
+
+.score-reset-container {
+  text-align: center; /* Center the content horizontally */
+}
+
+.score-reset-container > div {
+  margin-bottom: 10px; /* Add some spacing between the elements */
+}
+
+#click-value {
+    display: none;
+}
