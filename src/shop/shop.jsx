@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Shop() {
+export function Shop() {
   // Function to purchase upgrades
   function purchaseUpgrade(upgradeNumber) {
     // Retrieve the current score from localStorage or default to 0 if not found

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function Score() {
+export function Score() {
   const [scores, setScores] = useState([]);
 
   useEffect(() => {

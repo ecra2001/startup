@@ -3,7 +3,7 @@
   import { Login } from './login/login';
   import { Play } from './play/play';
   import { Shop } from './shop/shop';
-  import { Scores } from './score/score';
+  import { Score } from './score/score';
   import { AuthState } from './login/authState';
   import 'bootstrap/dist/css/bootstrap.min.css';
   import './app.css';
@@ -65,9 +65,9 @@
               }
               exact
             />
-            <Route path='/play' element={<Play userName={userName} />} />
+            <Route path='/play' element={<Play />} />
             <Route path='/shop' element={<Shop />} />
-            <Route path='/score' element={<Scores />} />
+            <Route path='/score' element={<Score />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
   

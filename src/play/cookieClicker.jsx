@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { GameEvent, GameNotifier } from './gameNotifier';
 import './cookieClicker.css';
 
-function CookieClicker() {
+export function CookieClicker() {
   const [score, setScore] = useState(0);
   GameNotifier.broadcastEvent(userName, GameEvent.Start, {});
   useEffect(() => {
