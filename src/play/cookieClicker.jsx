@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { GameEvent, GameNotifier } from './gameNotifier';
 import './cookieClicker.css';
 
 function CookieClicker() {
   const [score, setScore] = useState(0);
-
+  GameNotifier.broadcastEvent(userName, GameEvent.Start, {});
   useEffect(() => {
     // Retrieve and display the username on the page
     const playerNameEl = document.querySelector('.player-name');
