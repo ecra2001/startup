@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 
 export function Score() {
   const [scores, setScores] = useState([]);
+  const [quote, setQuote] = React.useState('Loading...');
+  const [quoteAuthor, setQuoteAuthor] = React.useState('unknown');
 
-  useEffect(() => {
+  React.useEffect(() => {
     async function loadScores() {
       try {
         // Get the latest high scores from the service
@@ -26,6 +28,14 @@ export function Score() {
     }
 
     loadScores();
+
+    fetch('https://api.quotable.io/random')
+      .then((response) => response.json())
+      .then((data) => {
+        setQuote(data.content);
+        setQuoteAuthor(data.author);
+      })
+      .catch();
   }, []);
 
   return (
@@ -56,7 +66,10 @@ export function Score() {
           )}
         </tbody>
       </table>
-      <div id="quote" className="quote-box bg-light text-dark"></div>
+      <div>
+        <p className='quote'>{quote}</p>
+        <p className='author'>{quoteAuthor}</p>
+      </div>
     </main>
   );
 }
