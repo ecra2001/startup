@@ -71,11 +71,11 @@
             <Route path='*' element={<NotFound />} />
           </Routes>
   
-          <footer className='bg-dark text-dark text-muted'>
+          <footer className='bg-dark text-light'>
             <div className='container-fluid'>
               <span className='text-reset'>Elijah Cramer</span>
               <a className='text-reset' href='https://github.com/ecra2001/startup/tree/main'>
-                Source
+                Github
               </a>
             </div>
           </footer>
