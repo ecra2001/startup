@@ -57,3 +57,9 @@ A rendering of data is received to the server when a new game is being playing o
 - Frontend makes WebSocket connection - done! there seems to be an error in my game however that doesn't find the user's score. I didn't have time to fix that sadly.
 - Data sent over WebSocket connection - done!
 - WebSocket data displayed - All scores display in realtime.
+
+## React Deliverable
+- Bundled using Vite - done!
+- Multiple functional react components - Created login, play, shop, and score components
+- React router - Routed between login and other components, however the play component is the only one that doesn't work after logging in
+- React hooks - UseState to track score, get random quote, and get username
